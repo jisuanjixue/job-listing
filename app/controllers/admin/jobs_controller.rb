@@ -43,10 +43,22 @@ end
    end
 
    def require_is_admin
-     if current_user.admin?
+     if !current_user.admin?
        flash[:alert] = 'you are not admin'
        redirect_to root_path
      end
+   end
+
+   def Publish
+     @job = Job.find(params[:id])
+     @job.publish!
+     redirect_to :back
+   end
+
+   def hide
+     @job = Job.find(params[:id])
+     @job.hide!
+     redirect_to :back
    end
 
   private
