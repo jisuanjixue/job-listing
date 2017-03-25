@@ -1,6 +1,8 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
+ layout "admin"
+
     def index
       @jobs = Job.all
     end
@@ -39,6 +41,18 @@ class Admin::JobsController < ApplicationController
        @job = Job.find(params[:id])
        @job.destroy
       redirect_to admin_jobs_path
+    end
+
+   def publish
+     @job = Job.find(params[:id])
+     @job.publish!
+redirect_to :back
+end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.hide!
+    redirect_to :back
     end
 
       private
