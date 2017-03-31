@@ -1,11 +1,11 @@
-<h1> Add a job </h1>
+<h1> 新增工作 </h1>
 
  <%= simple_form_for @job do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
+<%= f.input :title, :label => "名称" %>
+<%= f.input :description, :label => "描述" %>
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
+<%= f.input :contact_email, :label => "电子邮箱" %>
 <%= f.input :is_hidden %>
 <%= f.submit "Submit" %>
 <% end %>
