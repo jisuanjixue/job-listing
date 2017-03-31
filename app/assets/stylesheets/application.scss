@@ -143,13 +143,29 @@
  }
 
  .jumbotron {
-   background-image:url('https://images.pexels.com/photos/7356/startup-photos-7356.jpg?h=350&auto=compress&cs=tinysrgb');
+   background-image:url('https://picjumbo.imgix.net/HNCK8984.jpg?q=40&w=1650&sharp=30');
    background-repeat: no-repeat;
    background-size: cover;
    padding-bottom: 100px;
  }
 
+ .container-fluid .jumbotron{
+ padding-bottom: 80px;//内部的底部边距，这样按钮不会很靠近底部了
+ margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+ border-radius: 0;//圆角为0
+}
+
+.jumbotron p {
+    margin: 0;//上下左右margin为0
+    font-size: 26px;//字体大
+    color: #222;//字体颜色
+    border-bottom-right-radius: 3px;//右下角圆边
+    border-bottom-left-radius: 3px;//左下角圆边
+}
+
  .title {
+   border-top-right-radius: 3px;//右上角圆边
+   border-top-left-radius: 3px;//左上角圆边
    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
    text-align: center;
    margin-top: 200px;
@@ -160,7 +176,7 @@
    margin-top: 10px;
    margin-bottom: 50px;
    text-align: center;
-   color: #111111;
+   color: #212121;
    top: 12px;
  }
 
@@ -171,13 +187,81 @@
  }
 
  .caption {
-   margin: 30px;
+   margin: 5px;
    text-align: center;
-   top: 20px;
+   top: 5px;
  }
 
  .thumbnail {
      border: 0 none;
      box-shadow: none;
-     margin-top: 60px;
+     margin-top: 10px;
  }
+
+ .navbar-default {
+     background-color: #263238;//背景颜色
+     border-color: #212121;//边框色
+     margin-bottom: 0;//底部 margin 不撑开距离
+ }
+
+ @media (min-width: 768px) {
+     .navbar {
+         border-radius: 0;//圆角为0
+     }
+ }
+
+ .navbar-default .navbar-brand {
+    color: #EF6C00;//字体颜色
+    padding: 10px 15px;//上下10px,左右15px
+    line-height: 30px;//文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+   color: #FF6F00;//鼠标放置在链接上的文字颜色
+   background-color: transparent;//鼠标放置在链接上的背景颜色，这里设为透明
+ }
+
+ .navbar-default .navbar-nav > li > a{
+   color: #EF6C00;
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+   color: #FF6F00;
+   background-color: transparent;
+ }
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+   color: #FF6F00;
+   background-color: #FFE0B2;
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+     background-color: #FFE0B2;
+     color: #212121;
+ }
+
+ .btn-danger {
+     color: #fff;//字体颜色
+     background-color: #EF6C00;//背景颜色
+     border-color: #EF6C00;//边框颜色
+ }
+
+ .btn-danger:hover {
+     background-color: #E65100;//鼠标放置在btn上的背景颜色
+     border-color: #E65100;//鼠标放置在btn上的边框颜色
+ }
+
+ .btn-lg, .btn-group-lg > .btn {
+     padding: 8px 16px;//通过padding来决定btn的大小
+     font-size: 20px;//btn文字大小
+     letter-spacing: 3px;//调整文字间距
+     border-radius: 3px;//btn圆角
+     width: 150px;//这里用指定宽度把btn拉得更长
+ }
+
+ 
