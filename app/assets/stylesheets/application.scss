@@ -193,9 +193,11 @@
  }
 
  .thumbnail {
-     border: 0 none;
-     box-shadow: none;
-     margin-top: 10px;
+     background-color: #1abc9c; /* Green */
+     color: #ffffff;
+     border: -5px;
+     box-shadow: 5px;
+     margin-top: 5px;
  }
 
  .navbar-default {
@@ -215,6 +217,13 @@
     padding: 10px 15px;//上下10px,左右15px
     line-height: 30px;//文字行高
  }
+
+ .navbar-brand > img {
+   display: inline-block;	//图片和链接文字显示在同一行
+   margin-right: 10px; //图片和链接文字拉开一点距离
+   width: 32px; //定制图片宽度
+   height: 32px; //定制图片高度
+}
 
  .navbar-default .navbar-brand:hover,
  .navbar-default .navbar-brand:focus {
@@ -263,5 +272,3 @@
      border-radius: 3px;//btn圆角
      width: 150px;//这里用指定宽度把btn拉得更长
  }
-
- 

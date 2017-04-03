@@ -7,7 +7,11 @@ resources :jobs do
   resources :resumes
 end
 
-
+resources :jobs do
+put :favorite, on: :member
+resources :favorite do
+ end
+end
 
  namespace :admin do
    resources :jobs do

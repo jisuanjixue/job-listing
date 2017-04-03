@@ -1,4 +1,7 @@
 class Job < ApplicationRecord
+belongs_to :user
+  has_many :favorites
+  has_many :fans, through: :favorites, source: :user
   has_many :resumes
 scope :published, -> { where(is_hidden: false) }
 scope :recent, -> { order('created_at DESC') }
