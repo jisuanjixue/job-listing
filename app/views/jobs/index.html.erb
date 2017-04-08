@@ -49,12 +49,6 @@
         </thead>
         <tbody>
             <% @jobs.each do |job| %>
-            <% if current_user && current_user.is_favorite_of?(job) %>
-                    <button type="button" class="btn btn-default btn-xs"><%= link_to('<span class="glyphicon glyphicon-star-empty"></span>取消收藏'.html_safe, favorite_job_path(job, type: "unfavorite"), method: :put) %></button>
-                  <% else %>
-                    <button type="button" class="btn btn-default btn-xs"><%= link_to('<span class="glyphicon glyphicon-star"></span>添加收藏'.html_safe, favorite_job_path(job, type: "favorite"), method: :put) %></button>
-                  <% end %>
-
             <tr>
                 <td>
                     <%= link_to(job.title, job_path(job), :target => "_blank") %>
