@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :favorite]
 before_action :validate_search_key, only: [:search]
-
+before_action :validate_city_key, only: [:city]
  def index
    @jobs = case params[:order]
    when 'by_lower_bound'
@@ -60,6 +60,13 @@ end
       end
     end
 
+    def city
+     if @cuery_string.present?
+     city_result = Job.published.ransack(@city_criteria).result(:distinct => true)
+       @jobs = city_result.paginate(:page => params[:page], :per_page => 6 )
+     end
+   end
+
     def favorite
     @job = Job.find(params[:id])
     type = params[:type]
@@ -91,6 +98,16 @@ end
 
 
  def search_criteria(query_string)
-   { :title_description_cont => query_string } #搜索匹配title和description，可以加其他关键词匹配
+   { :title_description_cont => query_string }
  end
+
+ def validate_city_key
+    @cuery_string = params[:c].gsub(/\\|\'|\/|\?/, "") if params[:c].present?
+    @city_criteria = {place_cont: @cuery_string}
+  end
+
+  def city_criteria(cuery_string)
+    { :title_cont => cuery_string}
+  end
+
 end

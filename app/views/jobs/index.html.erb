@@ -15,7 +15,7 @@
 
 
     <div class="pull-right">
-        <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+        <%= link_to("新增工作", new_job_path, :class => "btn btn-default" ) %>
     </div>
 
     <div class="dropdown clearfix pull-right">
@@ -25,15 +25,14 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
             <li>
-                <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+    <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
             </li>
             <li>
-                <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+    <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
 
             </li>
             <li>
                 <%= link_to("按照发表时间排序", jobs_path ) %>
-
             </li>
         </ul>
     </div>
@@ -44,6 +43,8 @@
                 <td>职缺</td>
                 <td>薪资范围</td>
                 <td>刊登时间</td>
+                <td>投递</td>
+                <td>收藏</td>
             </tr>
 
         </thead>
@@ -51,20 +52,30 @@
             <% @jobs.each do |job| %>
             <tr>
                 <td>
-                    <%= link_to(job.title, job_path(job), :target => "_blank") %>
+              <%= link_to(job.title, job_path(job), :target => "_blank") %>
                 </td>
-                <td width="30%">
+                <td>
                     <span class="badge badge-info">
                         <span class="fa -fa-rmb"></span>
-                        <%= job.wage_lower_bound %>
-                        -
-                        <%= job.wage_upper_bound %>
-                        元
+<%= job.wage_lower_bound %>-<%= job.wage_upper_bound %> 元
                     </span>
                 </td>
-                <td width="10%"><%= local_time(job.created_at, '%B %e, %Y %l:%M%p') %></td>
+                <td><%= local_time(job.created_at, '%B %e, %Y %l:%M%p') %></td>
+     <td>
+     <% if current_user && current_user.has_applied?(job) %>
+     <%= link_to("已投递", new_job_resume_path(job), class: "btn btn-info btn-sm disabled", method: :get) %>
+     <% else %>
+     <%= link_to("投递履历", new_job_resume_path(job), class: "btn btn-info btn-sm", method: :get) %>
+       <% end %>
+     </td>
+    <td>
+      <% if current_user && current_user.is_favorite_of?(job) %>
+      <%= link_to('取消收藏'.html_safe, favorite_job_path(job, type: "unfavorite"), method: :put) %>
+    <% else %>
+    <%= link_to('添加收藏'.html_safe, favorite_job_path(job, type: "favorite"), method: :put) %>
+    <% end %>
+       </td>
             </tr>
             <% end %>
         </tbody>
-
     </table>

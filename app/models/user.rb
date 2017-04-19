@@ -3,14 +3,22 @@ has_many :jobs
   has_many :favorites
   has_many :favorite_jobs, :through => :favorites, :source => :job
   has_many :resumes
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :job_relationships
+  has_many :applied_jobs, :through => :job_relationships, :source => :job
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         def admin?
-             email == 'r@qq.com'
+ def admin?
+   email == 'r@qq.com'
   end
+
+ def has_applied?(job)
+   applied_jobs.include?(job)
+ end
+
+ def apply!(job)
+ applied_jobs << job
+end
 
   def is_favorite_of?(job)
   favorite_jobs.include?(job)

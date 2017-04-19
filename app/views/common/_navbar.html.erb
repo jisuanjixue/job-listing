@@ -5,6 +5,30 @@
           <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' >18K Offer</a>
         </div>
 
+        <div class="city-change">
+	<ul class="nav navbar-nav">
+		<li style="font-size: 0.4em; color: white; margin-top: 1.5em;">
+			<% if @cuery_string.blank?%>
+			<% else %>
+				<%= @cuery_string %>
+			<% end %>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 1em; margin: auto;" >[切换城市]<span class="caret"></span></a>
+			<ul class="dropdown-menu" id="bootstrap-override-1">
+				<ul class="list-inline" style="30px;">
+					<li><%= link_to("全国", jobs_path, class: "bootstrap-override-2") %></li>
+					<li><%= link_to("北京", city_jobs_path(c:"北京"), class: "bootstrap-override-2") %></li>
+					<li><%= link_to("上海", city_jobs_path(c:"上海"), class: "bootstrap-override-2") %></li>
+					<li><%= link_to("深圳", city_jobs_path(c:"深圳"), class: "bootstrap-override-2") %></li>
+					<li><%= link_to("广州", city_jobs_path(c:"广州"), class: "bootstrap-override-2") %></li>
+					<li><%= link_to("昆明", city_jobs_path(c:"昆明"), class: "bootstrap-override-2") %></li>
+				</ul>
+			</ul>
+		</li>
+	</ul>
+</div>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -19,6 +43,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
+<li><%= link_to("已投递的工作", account_jobs_path) %></li>
 <li> <%= link_to("Admin Panel", admin_jobs_path) %> </li>
                         <li>
                             <%= link_to("登出", destroy_user_session_path, method: :delete) %>

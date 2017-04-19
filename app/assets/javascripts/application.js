@@ -18,4 +18,5 @@
 //= require bootstrap/modal
 // = require bootstrap/tab
 //= require local_time
+//= require bootstrap-sprockets
 //= require_tree .
