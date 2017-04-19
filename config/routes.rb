@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 resources :jobs do
   collection do
   get :search
-  get :city 
+  get :city
   end
   resources :resumes
 end
@@ -15,6 +15,7 @@ resources :favorite do
 end
 
 namespace :account do
+  resources :users
   resources :jobs
 end
 

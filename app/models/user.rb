@@ -23,4 +23,13 @@ end
   def is_favorite_of?(job)
   favorite_jobs.include?(job)
   end
+
+  def display_name
+  if self.username.present?
+    self.username
+  else
+    self.email.split("@").first
+  end
+end
+
 end
