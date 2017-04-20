@@ -19,6 +19,12 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body {
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  background-image: linear-gradient(#8b9da9, #fff6e4);
+}
+
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
@@ -114,6 +120,9 @@
   font-size: 12px;
 }
 
+/****** LOGIN MODAL EDND******/
+
+/****** 后台更改按钮样式 ******/
 .custab{
   border: 1px solid #ccc;
 
@@ -129,89 +138,21 @@
   transition: 0.5s;
 }
 
-.custab{
-   border: 1px solid #ccc;
-   padding: 5px;
-   margin: 5% 0;
-   box-shadow: 3px 3px 2px #ccc;
-   transition: 0.5s;
- }
+/****** 后台更改按钮样式 ******/
 
- .custab:hover{
-   box-shadow: 3px 3px 0px transparent;
-   transition: 0.5s;
- }
+/****** 导航栏 ******/
 
- .jumbotron {
-   background-image:url('https://picjumbo.imgix.net/HNCK8984.jpg?q=40&w=1650&sharp=30');
-     background-color: #706d6d; /* Dark Blue */
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding-bottom: 100px;
- }
-
- .container-fluid .jumbotron{
- padding-bottom: 80px;//内部的底部边距，这样按钮不会很靠近底部了
- margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
- border-radius: 0;//圆角为0
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
 }
 
-.jumbotron p {
-    margin: 0;//上下左右margin为0
-    font-size: 26px;//字体大
-    color: #222;//字体颜色
-    border-bottom-right-radius: 3px;//右下角圆边
-    border-bottom-left-radius: 3px;//左下角圆边
+.navbar-default {
+    background-color: #263238;//背景颜色
+    border-color: #212121;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
 }
-
- .title {
-   border-top-right-radius: 3px;//右上角圆边
-   border-top-left-radius: 3px;//左上角圆边
-   font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-   text-align: center;
-   margin-top: 200px;
-   margin-bottom: 80px;
- }
-
- .slogan {
-   margin-top: 10px;
-   margin-bottom: 50px;
-   text-align: center;
-   color: #212121;
-   top: 12px;
- }
-
- .lead {
-   margin-bottom: 60px;
-   text-align: center;
-   color: white;
- }
-
- .caption {
-   margin: 5px;
-   text-align: center;
-   top: 5px;
- }
-
- .thumbnail {
-     background-color: #1abc9c; /* Green */
-     color: #ffffff;
-     border: -5px;
-     box-shadow: 5px;
-     margin-top: 5px;
- }
-
- .navbar-default {
-     background-color: #263238;//背景颜色
-     border-color: #212121;//边框色
-     margin-bottom: 0;//底部 margin 不撑开距离
- }
-
- @media (min-width: 768px) {
-     .navbar {
-         border-radius: 0;//圆角为0
-     }
- }
 
  .navbar-default .navbar-brand {
     color: #EF6C00;//字体颜色
@@ -254,6 +195,8 @@
      background-color: #FFE0B2;
      color: #212121;
  }
+
+/****** 导航栏 ******/
 
  .btn-danger {
      color: #fff;//字体颜色

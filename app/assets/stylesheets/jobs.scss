@@ -11,4 +11,19 @@
  * General styles
  */
 
- 
+ /* Jobs-show-page */
+ /* Job-show-page */
+
+ $red: #ad0000;
+
+.jobs-show-page {
+  margin-top: 50px;
+  .dropdown {
+    margin-top: 20px;
+  }
+  .btn-default:hover, .btn-default:focus, .btn-default:default, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: darken($red, 5%);
+    background: #fff;
+    border: 1px solid #000;
+  }
+}
