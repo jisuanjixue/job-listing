@@ -8,8 +8,8 @@ has_many :jobs
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
- def admin?
-   email == 'r@qq.com'
+def admin?
+  is_admin
   end
 
  def has_applied?(job)
