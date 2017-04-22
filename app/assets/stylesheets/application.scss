@@ -19,12 +19,6 @@
 @import "bootstrap";
 @import "font-awesome";
 
-body {
-  font-family: 'Open sans', sans-serif;
-  font-weight: 300;
-  background-image: linear-gradient(#8b9da9, #fff6e4);
-}
-
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
@@ -215,4 +209,42 @@ body {
      letter-spacing: 3px;//调整文字间距
      border-radius: 3px;//btn圆角
      width: 150px;//这里用指定宽度把btn拉得更长
+ }
+
+ /*=Base=*/
+
+ section {
+   padding: 5em 0;
+ }
+
+ html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+  position: relative;
+}
+
+ .main {
+    padding-bottom:100px;   /* Height of the footer */
+ }
+
+ ul {
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+ }
+
+ hr {
+   margin-bottom: 3em;
+   width: 10%;
+   height: 10px
+ }
+
+ hr {
+     margin-top: 20px;
+     margin-bottom: 20px;
+     border: 0;
+     border-top: 1px solid #4db733;
  }
