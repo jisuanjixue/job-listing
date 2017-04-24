@@ -23,6 +23,9 @@
                 <%= f.input  :contact_email, :label => "联系邮箱", required: true %>
             </div>
             <div class="cols-sm-10">
+                <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
+            </div>
+            <div class="cols-sm-10">
                 <%= f.input :is_hidden, as: :boolean  %>
             </div>
           </div>

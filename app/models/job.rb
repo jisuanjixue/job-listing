@@ -1,9 +1,9 @@
 class Job < ApplicationRecord
-belongs_to :user
+  belongs_to :category
+  belongs_to :user
   has_many :favorites
   has_many :fans, through: :favorites, source: :user
   has_many :resumes
-
   has_many :job_relationships
   has_many :members, through: :job_relationships, source: :user
 
