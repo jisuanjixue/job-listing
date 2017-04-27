@@ -171,6 +171,18 @@
    color: #EF6C00;
  }
 
+ .navbar-fixed-top {
+     top: 0px;
+ }
+
+ .navbar-fixed-top, .navbar-fixed-bottom {
+     position: fixed;
+     top: 0px;
+     right: 0;
+     left: 0;
+     z-index: 1030;
+ }
+
  .navbar-default .navbar-nav > li > a:hover,
  .navbar-default .navbar-nav > li > a:focus {
    color: #FF6F00;

@@ -20,26 +20,16 @@
    border-width: 0 0 20px;
    margin-top: 0px;
  }
-  .btn-default:hover, .btn-default:focus, .btn-default:default, .btn-default.active, .open>.dropdown-toggle.btn-default {
-    color: darken($red, 5%);
-    background: #fff;
-    border: 1px solid #000;
-  }
 
-  .input-group .form-control {
-       position: relative;
-       z-index: 2;
-       float: center;
-       width: 50%;
-       margin-bottom: 0;
-   }
+ .btn-default:hover, .btn-default:focus, .btn-default:default, .btn-default.active, .open>.dropdown-toggle.btn-default {
+   color: darken($red, 5%);
+   border: 1px solid #000;
+ }
 
-   .search-bar .search-bar-input {
-      min-width: 300px;
-      transition: 1s;
-  }
-
- .h1 {
-      font-size: 36px;
-      float: center;
-  }
+ .input-group .form-control {
+     position: relative;
+     z-index: 2;
+     float: left;
+     width: 50%;
+     margin-bottom: 0;
+ }
