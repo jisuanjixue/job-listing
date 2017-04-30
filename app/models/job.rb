@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+  has_many :votes
+  has_many :voters, through: :votes, source: :user
   belongs_to :category
   belongs_to :user
   has_many :favorites

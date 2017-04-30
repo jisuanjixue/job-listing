@@ -42,6 +42,7 @@
                     <td>职缺</td>
                     <td>薪资范围</td>
                     <td>刊登时间</td>
+                    <td>点赞</td>
                     <td>投递</td>
                     <td>收藏</td>
                 </tr>
@@ -60,6 +61,16 @@
                         </span>
                     </td>
                     <td><%= local_time(job.created_at, '%B %e, %Y %l:%M%p') %></td>
+
+      <td>
+        <%= job.voters.count %>
+        <% if current_user && current_user.is_voter_of?(job) %>
+        <%= link_to("", downvote_job_path(job), method: :post, class: "fa fa-heart", style: "color:red;") %>
+        <% else %>
+        <%= link_to("", upvote_job_path(job), method: :post, class: "fa fa-heart-o") %>
+        <% end %>
+      </td>
+
          <td>
          <% if current_user && current_user.has_applied?(job) %>
          <%= link_to("已投递", new_job_resume_path(job), class: "btn btn-info btn-sm disabled", method: :get) %>

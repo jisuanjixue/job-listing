@@ -20,6 +20,13 @@ namespace :account do
   resources :jobs
 end
 
+resources :jobs do
+    member do
+      post :upvote
+     post :downvote
+    end
+  end
+
  namespace :admin do
    resources :jobs do
      member do

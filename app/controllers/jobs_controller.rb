@@ -53,6 +53,25 @@ end
     redirect_to jobs_path
   end
 
+  def upvote
+  @job = Job.find(params[:id])
+
+   if !current_user.is_voter_of?(@job)
+     current_user.upvote!(@job)
+   end
+
+   redirect_to :back
+ end
+
+ def downvote
+   @job = Job.find(params[:id])
+
+   if current_user.is_voter_of?(@job)
+     current_user.downvote!(@job)
+   end
+   redirect_to :back
+ end
+
   def search
       if @query_string.present?
         search_result = Job.published.ransack(@search_criteria).result(:distinct => true)

@@ -23,3 +23,11 @@
       </div>
     </div>
   </div>
+
+  <span class="pull-left">
+    <% if current_user && current_user.is_voter_of?(@job) %>
+      <%= link_to("", downvote_job_path(@job), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
+     <% else %>
+      <%= link_to("", upvote_job_path(@job), method: :post, class: "fa fa-heart-o fa-2x") %>
+    <% end %>
+  </span>
