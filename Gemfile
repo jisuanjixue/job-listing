@@ -39,6 +39,7 @@ gem 'will_paginate-bootstrap'
 gem 'seo_helper'
 gem 'local_time'
 gem 'rails-erd'
+gem 'intercom-rails'
 
 
 group :development, :test do
