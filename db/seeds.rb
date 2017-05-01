@@ -20,10 +20,10 @@ job_info = [
   '产品经理',
   '前端开发工程师',
   '市场营销',
-  '招聘php后台研发工程师',
-  '招聘高级JAVA研发工程师',
-  '招聘高级数据挖掘工程师',
-  '招聘高级客服经理'
+  'php后台研发工程师',
+  '高级JAVA研发工程师',
+  '高级数据挖掘工程师',
+  '高级客服经理'
 ]
 create_jobs = for i in 1..10 do
                 Job.create!([title: job_info[rand(job_info.length)], description: "这是一个公开的工作", wage_upper_bound: rand(40..79) * 1000, wage_lower_bound: rand(20..39) * 1000, is_hidden: 'false'])

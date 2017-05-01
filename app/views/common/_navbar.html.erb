@@ -51,9 +51,9 @@
        <ul class="dropdown-menu" id="bootstrap-override-2">
          <ul class="list-inline" style="10px;">
          <% Category.all.each do |category| %>
-         <li><%= link_to("制造业", jobs_path, class: "bootstrap-override-2") %></li>
-         <li><%= link_to("互联网业", jobs_path, class: "bootstrap-override-2") %></li>
-         <li><%= link_to("服务业", jobs_path, class: "bootstrap-override-2") %></li>
+         <li><%= link_to("制造业", jobs_path(:c => "制造业"), class: "bootstrap-override-2") %></li>
+         <li><%= link_to("互联网业", jobs_path(:c => "互联网"), class: "bootstrap-override-2") %></li>
+         <li><%= link_to("服务业", jobs_path(:c => "服务业"), class: "bootstrap-override-2") %></li>
      <% end %>
    </ul>
  </ul>

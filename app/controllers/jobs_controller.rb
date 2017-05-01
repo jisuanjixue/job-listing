@@ -11,6 +11,12 @@ before_action :validate_city_key, only: [:city]
    else
    Job.published.recent
  end
+
+ @jobs = Job.published
+    if params[:c].present?
+      @category = params[:c]
+      @jobs = @jobs.where(:category => @category)
+    end
 end
 
   def new
