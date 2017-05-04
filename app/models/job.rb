@@ -21,8 +21,12 @@ end
     self.save
   end
 
-  validates :title, presence: true
-  validates :wage_upper_bound, presence: true
-  validates :wage_lower_bound, presence: true
-  validates :wage_lower_bound, numericality: { greater_than: 0}
+  validates :title, presence: { message: "请填写职位名称" }
+  validates :description, presence: { message: "请填写职位描述" }
+  validates :wage_upper_bound, presence: { message: "请填写最高薪水" }
+  validates :wage_lower_bound, presence: { message: "请填写最低薪水" }
+  validates :wage_lower_bound, numericality: { less_than: :wage_upper_bound, message: "薪水下限不能高于薪水上限" }
+  validates :wage_upper_bound, numericality: { greater_than: 0, message: "最小薪水必须大于零" }
+  validates :contact_email, presence: { message: "请填写联系用的邮箱" }
+  validates_format_of :contact_email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i , message: "请输入正确的邮箱格式"
 end

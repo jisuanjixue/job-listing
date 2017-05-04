@@ -8,24 +8,24 @@
           <%= f.error_notification %>
           <div class="form-inputs col-md-10 col-lg-6">
             <div class="cols-sm-10">
-                <%= f.input :title, required: true, autofocus: true %>
+                <%= f.input :title, label: false, error: '请输入职位名称', hint: '请输入完整职位名称', placeholder: '职位名称', required: true, autofocus: true, input_html: { class: "form-control"}, autofocus: true %>
             </div>
             <div class="cols-sm-10">
-                <%= f.input :description %>
+                <%= f.input :description, label: '职位介绍'  %>
             <div class="cols-sm-10">
-                <%= f.input :wage_lower_bound, :label => "薪资下限", required: true %>
+                <%= f.input :wage_lower_bound, as: :string, :label => "薪资下限", required: true %>
             </div>
             <div class="cols-sm-10">
                 <%= f.input :wage_upper_bound, :label => "薪资上限", required: true %>
             </div>
             <div class="cols-sm-10">
-                <%= f.input  :contact_email, :label => "联系邮箱", required: true %>
+                <%= f.input  :contact_email, input_html: { maxlength: 16 }, :label => "联系邮箱", required: true %>
             </div>
             <div class="cols-sm-10">
                 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
             </div>
             <div class="cols-sm-10">
-                <%= f.input :is_hidden, as: :boolean  %>
+                <%= f.input :is_hidden, :label => false, as: :radio_buttons, collection:  [['显示', false], ['隐藏', true]]   %>
             </div>
           </div>
 
