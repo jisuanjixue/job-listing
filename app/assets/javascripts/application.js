@@ -19,4 +19,5 @@
 // = require bootstrap/tab
 //= require local_time
 //= require bootstrap-sprockets
+//= require bootstrap/collapse
 //= require_tree .

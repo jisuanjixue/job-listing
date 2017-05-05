@@ -2,10 +2,17 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
           <a class="navbar-brand" href="/"><%= image_tag 'pic-3.png' %>群英</a>
         </div>
 
-
+<div class="navbar-collapse navbar-ex1-collapse collapse"  aria-expanded="false">
       <div class="navbar-form navbar-left" role="search">
               <%= form_tag search_jobs_path, :method => :get  do %>
               <div class="input-group" id="search-id" >
@@ -105,6 +112,7 @@
         </div>
         <!-- /.navbar-collapse -->
     </div>
+      </div>
     <!-- /.container-fluid -->
 </nav>
 
